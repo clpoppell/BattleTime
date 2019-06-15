@@ -1,3 +1,5 @@
 <resources>
 	<string name="app_name">Battle Time</string>
+	<string name="game_title">Battle Time</string>
+	<string name="new_game_btn_text">New Game</string>
 </resources>
