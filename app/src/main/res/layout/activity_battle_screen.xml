@@ -13,12 +13,27 @@
 		android:layout_weight="1"
 		android:text="TextView" />
 
-	<Button
-		android:id="@+id/fight_btn"
-		android:layout_width="wrap_content"
+	<LinearLayout
+		android:id="@+id/button_layout"
+		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
-		android:layout_gravity="center_horizontal"
-		android:gravity="center"
-		android:onClick="fight"
-		android:text="Fight" />
+		android:gravity="center_horizontal"
+		android:orientation="horizontal">
+
+		<Button
+			android:id="@+id/fight_btn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:onClick="fight"
+			android:text="Fight" />
+
+		<Button
+			android:id="@+id/attack_btn"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:onClick="attack"
+			android:text="Attack" />
+	</LinearLayout>
+
 </LinearLayout>

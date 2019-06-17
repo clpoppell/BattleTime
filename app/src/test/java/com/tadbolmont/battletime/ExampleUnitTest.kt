@@ -1,7 +1,6 @@
 package com.tadbolmont.battletime
 
 import org.junit.Test
-
 import org.junit.Assert.*
 
 /**
