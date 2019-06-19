@@ -12,7 +12,7 @@ class MainMenu : Activity(){
         setContentView(R.layout.activity_main_menu)
     }
 
-    fun newGame(view: View){
+    fun newGame(@Suppress("UNUSED_PARAMETER")view: View){
         val intent= Intent(this, BattleScreen::class.java)
         startActivity(intent)
     }

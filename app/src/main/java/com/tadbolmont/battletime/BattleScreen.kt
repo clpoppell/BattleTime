@@ -5,28 +5,38 @@ import android.app.Activity
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
+import engine.Enemy
 import engine.PlayerCharacter
 
 class BattleScreen: Activity(){
-    var pc= PlayerCharacter("Hank", 20, 5, 5)
+    private val pc= PlayerCharacter(name= "Hank", maximumHP= 20, strength= 5, stamina= 5)
+    private val enemy= Enemy(name= "Eidolon", maximumHitPoints= 10, strength= 5, stamina= 5, desc= "Basic enemy", rewardExperiencePoints= 5, rewardGold= 5)
 
     override fun onCreate(savedInstanceState: Bundle?){
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_battle_screen)
     }
 
-    fun fight(view: View){
-        pc= PlayerCharacter("Hank", 20, 5, 5)
-        displayPCInfo()
+    fun fight(@Suppress("UNUSED_PARAMETER") view: View){
+        pc.changeCurrentHP(7)
+        displayBattleInfo()
     }
 
-    fun attack(view: View){
+    fun attack(@Suppress("UNUSED_PARAMETER")view: View){
         pc.changeCurrentHP(-6)
-        displayPCInfo()
+        displayBattleInfo()
     }
 
-    fun displayPCInfo(){
+    fun accessInventory(@Suppress("UNUSED_PARAMETER") view: View){
+        enemy.changeCurrentHP(-3)
+        displayBattleInfo()
+    }
+
+    @SuppressLint("SetTextI18n")
+    private fun displayBattleInfo(){
         val infoBox= findViewById<TextView>(R.id.battle_result_box)
-        infoBox.text= pc.toString()
+        infoBox.text= """$pc
+			             |
+			             |$enemy""".trimMargin()
     }
 }
