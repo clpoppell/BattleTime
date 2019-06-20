@@ -10,38 +10,41 @@
 		android:id="@+id/battle_result_box"
 		android:layout_width="match_parent"
 		android:layout_height="0dp"
-		android:layout_weight="1"
-		android:text="TextView" />
+		android:layout_weight="1" />
 
 	<LinearLayout
 		android:id="@+id/button_layout"
+		style="?android:attr/buttonBarStyle"
 		android:layout_width="match_parent"
 		android:layout_height="wrap_content"
 		android:gravity="center_horizontal"
 		android:orientation="horizontal">
 
 		<Button
-			android:id="@+id/fight_btn"
-			android:layout_width="wrap_content"
-			android:layout_height="wrap_content"
-			android:gravity="center"
-			android:onClick="fight"
-			android:text="Fight" />
-
-		<Button
 			android:id="@+id/attack_btn"
+			style="?android:attr/buttonBarButtonStyle"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:onClick="attack"
-			android:text="Attack" />
+			android:text="@string/attack_btn_title" />
 
 		<Button
-			android:id="@+id/inventory_btn"
+			android:id="@+id/skills_btn"
+			style="?android:attr/buttonBarButtonStyle"
 			android:layout_width="wrap_content"
 			android:layout_height="wrap_content"
 			android:gravity="center"
 			android:onClick="fight"
-			android:text="Inventory" />
+			android:text="@string/skills_btn_title" />
+
+		<Button
+			android:id="@+id/inventory_btn"
+			style="?android:attr/buttonBarButtonStyle"
+			android:layout_width="wrap_content"
+			android:layout_height="wrap_content"
+			android:gravity="center"
+			android:onClick="accessInventory"
+			android:text="@string/inventory_btn_title" />
 	</LinearLayout>
 
 </LinearLayout>

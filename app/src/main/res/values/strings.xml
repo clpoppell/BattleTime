@@ -2,4 +2,7 @@
 	<string name="app_name">Battle Time</string>
 	<string name="game_title">Battle Time</string>
 	<string name="new_game_btn_text">New Game</string>
+	<string name="inventory_btn_title">Backpack</string>
+	<string name="skills_btn_title">Skills</string>
+	<string name="attack_btn_title">Attack</string>
 </resources>

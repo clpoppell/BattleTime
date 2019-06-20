@@ -1,6 +1,5 @@
 package com.tadbolmont.battletime
 
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.os.Bundle
 import android.view.View
@@ -18,21 +17,18 @@ class BattleScreen: Activity(){
     }
 
     fun fight(@Suppress("UNUSED_PARAMETER") view: View){
-        pc.changeCurrentHP(7)
+		enemy.changeCurrentHP(-pc.calculateAttackPower())
         displayBattleInfo()
     }
 
     fun attack(@Suppress("UNUSED_PARAMETER")view: View){
-        pc.changeCurrentHP(-6)
-        displayBattleInfo()
+		displayBattleInfo()
     }
 
     fun accessInventory(@Suppress("UNUSED_PARAMETER") view: View){
-        enemy.changeCurrentHP(-3)
-        displayBattleInfo()
+		displayBattleInfo()
     }
 
-    @SuppressLint("SetTextI18n")
     private fun displayBattleInfo(){
         val infoBox= findViewById<TextView>(R.id.battle_result_box)
         infoBox.text= """$pc
