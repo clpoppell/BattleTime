@@ -12,15 +12,23 @@ const val DEFAULT_PLAYER_NAME= "Lee"
  */
 class PlayerCharacter(
 		override var name: String= DEFAULT_PLAYER_NAME,
+		val charClass: CharacterClass,
 		override var maximumHP: Int,
 		currentHP: Int= maximumHP,
 		override var strength: Int,
 		override var stamina: Int
 	): Creature(name, maximumHP, currentHP, strength, stamina){
 
-
+	/** Returns calculated attack power. */
 	override fun calculateAttackPower()= strength * 5 //TODO make actual calculation
 
-
+	/** Returns calculated defense value. */
 	override fun calculateDefenseValue()= stamina * 5 //TODO make actual calculation
+
+	/** @suppress */
+	override fun toString(): String{
+		return super.toString() + """|
+									 |Class: ${charClass.name}, ${charClass.desc}
+									 |""".trimMargin()
+	}
 }
