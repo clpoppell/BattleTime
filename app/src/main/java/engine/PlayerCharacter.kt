@@ -19,8 +19,16 @@ class PlayerCharacter(
 		override var stamina: Int
 	): Creature(name, maximumHP, currentHP, strength, stamina){
 
+	//TODO Change null to default equipment
+	var equippedWeapon: Weapon?= null
+	var equippedArmor: Armor?= null
+
 	/** Returns calculated attack power. */
-	override fun calculateAttackPower()= strength * 5 //TODO make actual calculation
+	override fun calculateAttackPower(): Int{
+		val baseAttack= strength
+		var mod= baseAttack * equippedWeapon.damageMod
+		return baseAttack
+	}
 
 	/** Returns calculated defense value. */
 	override fun calculateDefenseValue()= stamina * 5 //TODO make actual calculation

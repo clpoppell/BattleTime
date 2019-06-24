@@ -4,7 +4,7 @@ package engine
  * Super class for all in-game entities that can enter into battles.
  * <p> Allows all such entities to be stored in the same objects. </p>
  *
- * @property [name] the name of the creature.
+ * @property [name] the name of this creature.
  * @property [maximumHP] the maximum hit points value for this creature.
  * @property [currentHP] the current hit points value for this creature.
  * @property [strength] the physical attack value for this creature.
