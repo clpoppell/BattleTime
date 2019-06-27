@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ItemList>
+	<!-- Weapon -->
+	<Item type="weapon">
+		<Name>Stick</Name>
+		<Plural>Sticks</Plural>
+		<Price>0</Price>
+		<SalePriceMultiplier>0.0</SalePriceMultiplier>
+		<DamageMod>0.2</DamageMod>
+		<Description>A short branch you picked off the ground.</Description>
+	</Item>
+
+	<!-- Armor -->
+	<Item type="armor">
+		<Name>Jacket</Name>
+		<Plural>Jackets</Plural>
+		<Price>5</Price>
+		<SalePriceMultiplier>0.5</SalePriceMultiplier>
+		<ArmorMod>0.2</ArmorMod>
+		<Description>A light jacket, doesn't provide much protection.</Description>
+	</Item>
+</ItemList>

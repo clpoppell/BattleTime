@@ -5,9 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.view.View
 import android.widget.TextView
-import engine.CharacterClass
-import engine.Enemy
-import engine.PlayerCharacter
+import engine.*
 
 const val TIMING: Long= 500 //TODO Decide on timing
 
@@ -22,12 +20,15 @@ class BattleScreen: Activity(){
 
     /** Initiates a standard attack */
     fun attack(@Suppress("UNUSED_PARAMETER")view: View){
+        pc.equippedWeapon= ITEM_LIST["Stick"] as Weapon
+        pc.equippedArmor= ITEM_LIST["Jacket"] as Armor
 		displayBattleInfo()
     }
 
     /** Opens inventory view */
     fun accessInventory(@Suppress("UNUSED_PARAMETER") view: View){
         //TODO Create inventory view
+
     }
 
     /** Displays player character and enemy information. Is ran after updates to in-battle objects. */

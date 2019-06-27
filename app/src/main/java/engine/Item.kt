@@ -14,23 +14,17 @@ const val DEFAULT_ITEM_NAME= "???"
  * @property namePlural the plural form of the item name.
  * @property desc the description of this item.
  * @property price the price value for this item.
- * @property salePrice the sale price value for this item.
+ * @property salePriceMultiplier the sale price multiplier for this item.
  */
 abstract class BaseItem(
-		val name: String= DEFAULT_ITEM_NAME,
-		val namePlural: String= DEFAULT_ITEM_NAME,
-		val desc: String= "",
-		val price: Int= 0,
-		val salePrice: Int= (price * DEFAULT_SALE_PRICE_MULT).toInt())
+		var name: String= DEFAULT_ITEM_NAME,
+		var namePlural: String= DEFAULT_ITEM_NAME,
+		var desc: String= "",
+		var price: Int= 0,
+		var salePriceMultiplier: Double= DEFAULT_SALE_PRICE_MULT)
 
 /** Super class for all items that can be equipped to enhance the player character. */
-abstract class EquipableItem(
-		name: String= DEFAULT_ITEM_NAME,
-		namePlural: String= DEFAULT_ITEM_NAME,
-		desc: String= "",
-		price: Int= 0,
-		salePrice: Int= (price * DEFAULT_SALE_PRICE_MULT).toInt()
-	): BaseItem(name, namePlural, desc, price, salePrice)
+abstract class EquipableItem: BaseItem()
 
 /**
  * Used for equipable items that modify the attack power attribute of the player character.
@@ -38,14 +32,7 @@ abstract class EquipableItem(
  *
  * @property damageMod the multiplier for damage calculation.
  */
-class Weapon(
-		name: String= DEFAULT_ITEM_NAME,
-		namePlural: String= DEFAULT_ITEM_NAME,
-		desc: String= "",
-		price: Int= 0,
-		salePrice: Int= (price * DEFAULT_SALE_PRICE_MULT).toInt(),
-		val damageMod: Double= 1.0
-	): EquipableItem(name, namePlural, desc, price, salePrice)
+data class Weapon(var damageMod: Double= 1.0): EquipableItem()
 
 /**
  * Used for equipable items that modify the player character's defense value.
@@ -53,12 +40,5 @@ class Weapon(
  *
  * @property armorMod the multiplier for defense calculation.
  */
-class Armor(
-		name: String= DEFAULT_ITEM_NAME,
-		namePlural: String= DEFAULT_ITEM_NAME,
-		desc: String= "",
-		price: Int= 0,
-		salePrice: Int= (price * DEFAULT_SALE_PRICE_MULT).toInt(),
-		val armorMod: Double= 1.0
-	): EquipableItem(name, namePlural, desc, price, salePrice)
+data class Armor(var armorMod: Double= 1.0): EquipableItem()
 
